@@ -15,16 +15,13 @@ public class Circle {
 	 * This holds information about a circle - Center point coordinates, radius, and functions for it.
 	 */
 	//private static final long serialVersionUID = 1L;
-	double x;
-	double y;
+	Point p = new Point(1,1);
 	double radius;
 	
 	/**
 	 * Simplist circle. 
 	 */
 	public Circle(){
-		this.x = 1;
-		this.y = 1;
 		this.radius = 1;
 	}
 	
@@ -32,8 +29,16 @@ public class Circle {
 	 * A circle that the radius sets all info. 
 	 */
 	public Circle(double radius){
-		this.x = radius;
-		this.y = radius;
+		this.p.setX(radius);
+		this.p.setY(radius);
+		this.radius = radius;
+	}
+	
+	/**
+	 * A circle that the radius sets all info. 
+	 */
+	public Circle(Point p,double radius){
+		this.p = p;
 		this.radius = radius;
 	}
 	
@@ -41,25 +46,17 @@ public class Circle {
 	 * Most complicated circle - set all factors. 
 	 */
 	public Circle(double x, double y, double radius){
-		this.x = x;
-		this.y = y;
+		p.setX(x);
+		p.setY(y);
 		this.radius = radius;
 	}
-	
-	public double getX() {
-		return x;
+
+	public Point getP() {
+		return p;
 	}
 
-	public void setX(double x) {
-		this.x = x;
-	}
-
-	public double getY() {
-		return y;
-	}
-
-	public void setY(double y) {
-		this.y = y;
+	public void setP(Point p) {
+		this.p = p;
 	}
 
 	public double getRadius() {
@@ -79,7 +76,8 @@ public class Circle {
 	}
 	
 	public double distanceFromOrigin(){
-		return Math.sqrt(Math.pow(this.x, 2) + Math.pow(this.y, 2));
+		Point q = new Point();
+		return q.euclideanDistance(this.p);
 	}
 	
 	/**
@@ -87,10 +85,10 @@ public class Circle {
 	 **/
 	public void draw(){		
 		
-		for (int i = 0; i <= 2 * this.x; i++){
-	        for (int j = 0; j <= 2 * this.y; j++){
-	            double inX = (x - i);
-	            double inY = (y - j);
+		for (int i = 0; i <= 2 * p.getX(); i++){
+	        for (int j = 0; j <= 2 * p.getY(); j++){
+	            double inX = (p.getY() - i);
+	            double inY = (p.getX() - j);
 
 	            if (Math.abs(Math.pow(inX, 2) + Math.pow(inY, 2) - Math.pow(this.radius, 2)) < 5){ //print as long as we're within a certain distance. 
 	                System.out.print("X");
