@@ -31,22 +31,22 @@ public class Point {
 	}
 
 	public double euclideanDistance(Point p){
-		
-		return 0;
+		double xDist = Math.abs(this.getX() - p.getX());
+		double yDist = Math.abs(this.getY() - p.getY());
+		return Math.sqrt(Math.pow(xDist,2) + Math.pow(yDist, 2));
 	}
 	
 	public static double euclideanDistance(Point p, Point q){
-		
-		return 0;
+		return q.euclideanDistance(p);
 	}
 	
 	public double manhattanDistance(Point p){
-		
-		return 0;
+		double xDist = Math.abs(this.getX() - p.getX());
+		double yDist = Math.abs(this.getY() - p.getY());
+		return xDist + yDist;
 	}
 	
 	public static double manhattanDistance(Point p, Point q){
-	
-		return 0;
+		return q.manhattanDistance(p);
 	}
 }

@@ -12,17 +12,14 @@ public class Rectangle {
 	//private static final long serialVersionUID = 1L;
 	double width;
 	double height;
-	double x;
-	double y;
+	Point p = new Point();
 	
 	/**
-	 * Simplist rectangle
+	 * Simplest rectangle
 	 */
 	public Rectangle(){
 		this.width = 1;
 		this.height = 1;
-		this.x = 0;
-		this.y = 0;
 	}
 	
 	/**
@@ -33,8 +30,18 @@ public class Rectangle {
 	public Rectangle(double width, double height) {
 		this.width = width;
 		this.height = height;
-		this.x = 0;
-		this.y = 0;
+	}
+	
+	/**
+	 * 
+	 * @param p
+	 * @param width
+	 * @param height
+	 */
+	public Rectangle(Point p, double width, double height){
+		this.width = width;
+		this.height = height;
+		this.p = p;
 	}
 	
 	/**
@@ -47,69 +54,105 @@ public class Rectangle {
 	public Rectangle(double width, double height, double x, double y){
 		this.width = width;
 		this.height = height;
-		this.x = x;
-		this.y = y;
+		p.setX(x);
+		p.setY(y);
 	}
 	
+	/**
+	 * Gets the width of the current rectangle
+	 * @return width
+	 */
 	public double getWidth() {
 		return width;
 	}
 
+	/**
+	 *  sets the width of the current rectangle
+	 * @param width
+	 */
 	public void setWidth(double width) {
 		this.width = width;
 	}
 
+	/**
+	 * Gets the height of the current rectangle
+	 * @return
+	 */
 	public double getHeight() {
 		return height;
 	}
 
+	/**
+	 * sets the width of the current rectangle
+	 * @param height
+	 */
 	public void setHeight(double height) {
 		this.height = height;
 	}
 
-	public double getX() {
-		return x;
+	/**
+	 * Gets the top left point of the current rectangle
+	 * @return  p
+	 */
+	public Point getP() {
+		return p;
 	}
 
-	public void setX(double x) {
-		this.x = x;
+	/**
+	 * Sets the top left point of the current rectangle
+	 * @param p
+	 */
+	public void setP(Point p) {
+		this.p = p;
 	}
 
-	public double getY() {
-		return y;
-	}
-
-	public void setY(double y) {
-		this.y = y;
-	}
-
+	/**
+	 * returns the area of the rectangle
+	 * @return double
+	 */
 	public double area(){
 		return width * height;
 	}
 	
+	/**
+	 * returns the perimiter of the rectangle
+	 * @return
+	 */
 	public double perimeter(){
 		return 2 * width + 2 * height;
 	}
 	
+	/**
+	 * returns the length of the diagonal of the rectangle
+	 * @return
+	 */
 	public double diagonalLength(){
 		return Math.sqrt(this.width * this.width + this.height * this.height);
 	}
 	
+	/**
+	 * returns the distance from the origin of the upper left hand corner of the rectangle
+	 * @return
+	 */
 	public double distanceFromOrigin(){
-		return Math.sqrt(this.x * this.x + this.y * this.y);
+		Point a = new Point();
+		return a.euclideanDistance(this.p);
 	}
 	
+	/**
+	 * Draws the given rectangle in the command line using asterisks
+	 */
 	public void draw(){
 		
 		int i = 0;
 		
-		for(i = 0; i < this.y; i++){
+		for(i = 0; i < this.p.getY(); i++){
 			System.out.println();
 		}
 		
 		for(int j = 0; j < this.height; j++){		
-			for(i = 0; i < this.x + this.width; i++){
-				if(i < this.x){
+			for(i = 0; i < this.p.getX() + this.width; i++){
+				if(i < this.p.getX()){
 					System.out.print(" ");
 				}
 				else
