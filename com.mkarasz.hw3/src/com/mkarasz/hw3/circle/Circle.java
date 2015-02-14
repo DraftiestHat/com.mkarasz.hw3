@@ -1,5 +1,6 @@
 /**
- * Need to implement with Point class. Unused at this point.
+ * Drawing circles in console class. Implemented with Point.
+ * @author Matt
  */
 package com.mkarasz.hw3.circle;
 
@@ -102,17 +103,5 @@ public class Circle {
 		
 		
 	}
-	
-	/*public void draw(){
-		JFrame f = new JFrame();
-		f.setBounds(300,300,300,300);
-		f.getContentPane().add(this);
-		f.setVisible(true);
-	}
-	
-	public void paint(Graphics g){
-		Graphics2D g2 = (Graphics2D) g;
-		g2.draw(new Ellipse2D.Double(this.x, this.y, this.radius * 2, this.radius * 2));
-	}*/
 	
 }
