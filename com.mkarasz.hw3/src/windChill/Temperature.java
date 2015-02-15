@@ -9,7 +9,7 @@ public class Temperature {
 	private double celsius = 0;
 	
 	enum Type {
-		FAHRENHEIGHT, CELSIUS
+		FAHRENHEIGHT, CELSIUS, KELVIN
 	}
 	
 	/**
@@ -48,6 +48,10 @@ public class Temperature {
 			this.fahrentheit = celsToFahr(this.celsius);
 			this.kelvin = celsToKelv(this.celsius);
 			break;
+		case KELVIN:
+			this.kelvin = value;
+			this.fahrentheit = kelvToFahr(this.kelvin);
+			this.celsius = kelvToCels(this.kelvin);
 		}
 	}
 	
@@ -66,6 +70,15 @@ public class Temperature {
 	private double fahrToKelv(double value){
 		double cels = fahrToCels(value);
 		return celsToKelv(cels);
+	}
+	
+	private double kelvToCels(double value){
+		return value - 273.15;
+	}
+	
+	private double kelvToFahr(double value){
+		double cels = kelvToCels(value);
+		return celsToFahr(cels);
 	}
 
 	/**
