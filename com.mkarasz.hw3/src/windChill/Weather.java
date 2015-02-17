@@ -4,8 +4,7 @@ import java.util.Scanner;
 
 /**
  * Tests the rest of the windChill classes.
- * @author Matt
- * @TODO Actually test this. Something up with my computer, gotta check it out.
+ * @author Matt.
  */
 public class Weather {
 

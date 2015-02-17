@@ -1,4 +1,5 @@
 /**
+ * Wind Speed class that holds the speed of the wind
  * @author Matt
  *
  */
@@ -16,6 +17,7 @@ public class WindSpeed {
 	}
 	
 	/**
+	 * Converts and then returns the wind speed in meters/second
 	 * @return the speed in meters per second
 	 */
 	public double toMetersPerSecond(){
@@ -23,6 +25,7 @@ public class WindSpeed {
 	}
 	
 	/** 
+	 * Returns a string with the mph formated correctly.
 	 * @return String the speed in mph
 	 */
 	public String toString(){
@@ -30,14 +33,16 @@ public class WindSpeed {
 	}
 
 	/**
-	 * @return
+	 * Returns the objects wind speed
+	 * @return mph the wind speed in miles per hour
 	 */
 	public double getMph() {
 		return mph;
 	}
 
 	/**
-	 * @param mph
+	 * Sets the wind speed in miles per hour
+	 * @param mph the wind speed
 	 */
 	public void setMph(double mph) {
 		this.mph = mph;
