@@ -52,8 +52,7 @@ public class Temperature {
 		return new Temperature(value, Type.FAHRENHEIGHT);
 	}
 	
-	/**
-	 * Returns the original temperature the 
+	/* (non-Javadoc)
 	 * @see java.lang.Object#toString()
 	 */
 	public String toString(){

@@ -8,27 +8,27 @@ public class WindSpeedTest {
 
 	@Test
 	public void testWindSpeed() {
-		fail("Not yet implemented");
+		WindSpeed w = new WindSpeed(20);
+		assertNotNull(w);
 	}
 
 	@Test
 	public void testToMetersPerSecond() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testToString() {
-		fail("Not yet implemented");
+		WindSpeed w = new WindSpeed(30);
+		assertEquals(13.4112,w.toMetersPerSecond(),.2);
 	}
 
 	@Test
 	public void testGetMph() {
-		fail("Not yet implemented");
+		WindSpeed w = new WindSpeed(20);
+		assertEquals(20, w.getMph(), 0);
 	}
 
 	@Test
 	public void testSetMph() {
-		fail("Not yet implemented");
+		WindSpeed w = new WindSpeed(0);
+		w.setMph(30);
+		assertEquals(30, 30, 0);
 	}
 
 }

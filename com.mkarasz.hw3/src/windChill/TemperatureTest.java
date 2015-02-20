@@ -8,47 +8,53 @@ public class TemperatureTest {
 
 	@Test
 	public void testCelsiusInstance() {
-		fail("Not yet implemented");
+		Temperature t = Temperature.celsiusInstance(14);
+		assertNotNull("New celsiusInstance failed.",t);
 	}
 
 	@Test
 	public void testFahrenheightInstance() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testToString() {
-		fail("Not yet implemented");
+		Temperature t = Temperature.fahrenheightInstance(60);
+		assertNotNull("New fahrenheightInstance failed.",t);
 	}
 
 	@Test
 	public void testGetKelvin() {
-		fail("Not yet implemented");
+		Temperature t = Temperature.celsiusInstance(16);
+		assertEquals(289.15, t.getKelvin(), 0);
 	}
 
 	@Test
 	public void testSetKelvin() {
-		fail("Not yet implemented");
+		Temperature t = Temperature.celsiusInstance(0);
+		t.setKelvin(289.15);
+		assertEquals(16,t.getCelsius(),0);
 	}
 
 	@Test
 	public void testGetFahrentheit() {
-		fail("Not yet implemented");
+		Temperature t = Temperature.fahrenheightInstance(60.8);
+		assertEquals(16, t.getCelsius(), 0);
 	}
 
 	@Test
 	public void testSetFahrentheit() {
-		fail("Not yet implemented");
+		Temperature t = Temperature.fahrenheightInstance(0);
+		t.setFahrentheit(60.8);
+		assertEquals(16,t.getCelsius(),0);
 	}
 
 	@Test
 	public void testGetCelsius() {
-		fail("Not yet implemented");
+		Temperature t = Temperature.celsiusInstance(16);
+		assertEquals(16,t.getCelsius(),0);
 	}
 
 	@Test
 	public void testSetCelsius() {
-		fail("Not yet implemented");
+		Temperature t = Temperature.celsiusInstance(0);
+		t.setCelsius(16);
+		assertEquals(60.8,t.getFahrentheit(),0);
 	}
 
 }

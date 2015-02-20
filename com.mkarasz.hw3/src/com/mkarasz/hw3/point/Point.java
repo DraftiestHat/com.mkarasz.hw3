@@ -4,8 +4,8 @@
 package com.mkarasz.hw3.point;
 
 public class Point {
-	double x;
-	double y;
+	private double x;
+	private double y;
 	
 	/**
 	 * Makes a new point centered at the origin.
